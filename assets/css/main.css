@@ -706,28 +706,34 @@ h6 {
 /*--------------------------------------------------------------
 # Scroll Top Button
 --------------------------------------------------------------*/
-.scroll-top {
+/* Container để nhóm các nút Zalo và nút cuộn lên theo chiều dọc */
+/* Định dạng chung cho các nút */
+.scroll-buttons {
   position: fixed;
+  right: 15px;
+  bottom: 15px; /* Các nút ở dưới cùng */
+  display: flex;
+  flex-direction: column; /* Sắp xếp các nút theo chiều dọc */
+  gap: 10px; /* Khoảng cách giữa các nút */
+  z-index: 99999;
+}
+
+/* Định dạng cho nút cuộn lên trên */
+.scroll-top {
   visibility: hidden;
   opacity: 0;
-  right: 15px;
-  bottom: 15px;
-  z-index: 99999;
   background-color: var(--accent-color);
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.4s;
 }
 
 .scroll-top i {
-  font-size: 24px;
-  color: var(--contrast-color);
-  line-height: 0;
-}
-
-.scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  font-size: 28px;
   color: var(--contrast-color);
 }
 
@@ -735,6 +741,100 @@ h6 {
   visibility: visible;
   opacity: 1;
 }
+
+/* Định dạng cho nút Zalo */
+.scroll-zalo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.scroll-zalo img {
+  width: 60px;
+  height: 60px;
+}
+
+.scroll-zalo:hover {
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-zalo.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Định dạng cho nút điện thoại */
+.scroll-phone {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s;
+  visibility: hidden;
+  opacity: 0;
+  background-color: transparent; /* Bỏ background màu đỏ */
+  position: relative; /* Đảm bảo phone-number được căn chỉnh đúng */
+}
+
+.scroll-phone i {
+  font-size: 15px; /* Tăng kích thước icon */
+  color: white;
+  padding: 5px; /* Tạo khoảng cách xung quanh icon */
+  border: solid 2px #EE0033; /* Đường viền xung quanh */
+  border-radius: 50%; /* Để đường viền có hình tròn */
+  background-color: #EE0033; /* Màu nền của icon */
+}
+
+
+.scroll-phone .phone-number:hover{
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-phone .phone-number {
+  display: inline-block; /* Hiển thị inline ngang với icon */
+  position: absolute;
+  right: 100%; /* Đặt số điện thoại bên trái icon */
+  font-size: 20px;
+  text-align: center;
+  width: 150px;
+  border-radius: 10px 20px;
+  color:white;
+  border: solid 1px #EE0033; 
+  background-color: #EE0033;/* Màu icon */
+}
+
+/* Hiển thị tất cả các nút khi active */
+.scroll-phone.active, .scroll-zalo.active, .scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Đảm bảo kích thước nhỏ hơn trên thiết bị di động */
+@media screen and (max-width: 768px) {
+  .scroll-top, .scroll-zalo, .scroll-phone {
+    width: 40px;
+    height: 40px;
+  }
+
+  .scroll-phone .phone-number {
+    font-size: 12px;
+  }
+
+  .scroll-buttons {
+    right: 10px;
+    bottom: 10px;
+    gap: 8px;
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
@@ -796,7 +896,6 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
   scroll-margin-top: 98px;
   overflow: clip;
 }
@@ -849,110 +948,14 @@ section,
 
 .hero {
   width: 100%;
-  min-height: 80vh;
+  min-height: 30vh;
   position: relative;
-  padding: 80px 0 10px 0;
   display: flex;
   align-items: center;
   background: url(../img/hero-bg.png) top center no-repeat;
   background-size: cover;
 }
 
-.hero h1 {
-  margin: 0;
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 56px;
-}
-
-.hero p {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  margin: 5px 0 30px 0;
-  font-size: 20px;
-  font-weight: 400;
-}
-
-.hero .btn-get-started {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  font-family: var(--heading-font);
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 40px;
-  border-radius: 4px;
-  transition: 0.5s;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
-}
-
-.hero .btn-get-started i {
-  margin-left: 5px;
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-.hero .btn-get-started:hover {
-  color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
-}
-
-.hero .btn-get-started:hover i {
-  transform: translateX(5px);
-}
-
-.hero .btn-watch-video {
-  font-size: 16px;
-  transition: 0.5s;
-  color: var(--default-color);
-  font-weight: 600;
-}
-
-.hero .btn-watch-video i {
-  color: var(--accent-color);
-  font-size: 32px;
-  transition: 0.3s;
-  line-height: 0;
-  margin-right: 8px;
-}
-
-.hero .btn-watch-video:hover {
-  color: var(--accent-color);
-}
-
-.hero .btn-watch-video:hover i {
-  color: color-mix(in srgb, var(--accent-color), transparent 15%);
-}
-
-.hero .animated {
-  animation: up-down 2s ease-in-out infinite alternate-reverse both;
-}
-
-@media (max-width: 640px) {
-  .hero h1 {
-    font-size: 28px;
-    line-height: 36px;
-  }
-
-  .hero p {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 30px;
-  }
-}
-
-@keyframes up-down {
-  0% {
-    transform: translateY(10px);
-  }
-
-  100% {
-    transform: translateY(-10px);
-  }
-}
 
 /*--------------------------------------------------------------
 # Hero1 Section
@@ -1073,10 +1076,11 @@ section,
 
 .values .product-card .card-head {
   background-image: url('../img/img-similar-pack.svg');
-  height: 180px;
+  height: 100px;
   background-size: cover;
   background-position: center;
   display: flex;
+  border-radius: 20px 20px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -1118,8 +1122,8 @@ section,
 }
 
 .values .card-body .combo-it span {
-  font-size: 1.5rem;
-  max-width: 300px;
+  font-size: 1.3rem;
+  max-width: 500px;
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
@@ -1190,6 +1194,17 @@ section,
   font-weight: bolder;
   margin-right: 20px;
   color: #EE0033;
+}
+.values .nhom-goi span {
+  float: left;
+  font-size: 1em;
+  font-weight: bolder;
+  margin-left: 10px;
+  color: white;
+  border: solid 1px #EE0033;
+  background-color: #EE0033;
+  width: 200px;
+  border-radius: 20px 10px;
 }
 
 /*--------------------------------------------------------------
@@ -1786,7 +1801,7 @@ section,
 }
 
 .recent-posts .post-item .meta span {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bolder
 }
 
