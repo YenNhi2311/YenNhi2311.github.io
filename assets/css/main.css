@@ -1074,6 +1074,8 @@ section,
 # services Section
 --------------------------------------------------------------*/
 
+
+
 .values .product-card .card-head {
   background-image: url('../img/img-similar-pack.svg');
   height: 100px;
@@ -1443,7 +1445,7 @@ section,
   overflow: hidden;
   transition: transform 0.3s ease;
   padding: 10px;
-  height: 300px;
+  height: 400px;
   /* Chiều cao cố định để cân đối */
 }
 
@@ -1472,18 +1474,19 @@ section,
 }
 
 .card-sp  .product-card h4 {
-  font-size: 1.0rem;
+  font-size: 0.8rem;
   /* Giảm kích thước chữ cho tiêu đề */
-  font-weight: 600;
+  font-weight: 800;
   margin-top: 5px;
   /* Giảm khoảng cách trên */
   color: #333;
+  text-align: left;
 }
 
 .card-sp  .product-card h2 {
-  font-size: 2.0rem;
+  font-size: 1.3rem;
   /* Giảm kích thước chữ cho mô tả */
-  color: #333;
+  color: #EE0033;
   font-weight: bolder;
 }
 

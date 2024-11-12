@@ -979,131 +979,6 @@ section,
 
 
 
-/* General styles for larger screens */
-/* Product Card Styling */
-/* Cấu trúc chính cho Product Card */
-.services .product-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    margin: 0 auto;
-    height: auto;
-    max-width: 350px;
-}
-
-.services .service-title {
-    margin-left: 9%;
-    margin-top: 4%;
-    margin-bottom: 3%;
-    border: solid 2px #df1529;
-    background-color: #ee0033;
-    text-align: center;
-    width: 20%;
-    border-radius: 10px 20px;
-
-}
-
-.services .service-title h2 {
-    font-weight: bolder;
-    color: white;
-    font-size: 1.5em;
-    padding-top: 3%;
-}
-
-/* Hiệu ứng phóng to khi hover */
-.services .product-card:hover {
-    transform: scale(1.02);
-}
-
-/* Phần đầu của Product Card */
-.services .product-card .card-head {
-    background-image: url('../img/img-supernet.svg');
-    height: 100px;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.services .product-card .card-head h3 {
-    text-align: center;
-    font-size: 1.8rem;
-    color: white;
-    font-weight: bold;
-}
-
-/* Nội dung trong Product Card */
-.services .product-card .card-body {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.services .card-body .combo-it {
-    display: flex;
-    align-items: center;
-}
-
-.services .card-body .combo-it .img {
-    width: 30px;
-    margin-right: 1rem;
-}
-
-.services .card-body .combo-it span {
-    font-size: 1.2rem;
-    color: #333;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-/* Footer chứa các nút trong Product Card */
-.services .product-card .card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-.services .card-footer .button {
-    width: 120px;
-    padding: 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.services .card-footer .btn-success {
-    background-color: #ee0033;
-}
-
-.services .card-footer .btn-primary {
-    background-color: #666;
-}
-
-.services .card-footer .button:hover {
-    transform: scale(1.05);
-    background-color: #e84850;
-}
-
-
-.uu-dai .col-lg-12 h3{
-   font-weight: bolder;
-   color: #EE0033;
-}
-
-.uu-dai .col-lg-12 span{
-    font-weight: bolder;
-    font-size: 1em;
-}
 
 
 /* *--------------------------------------------------------------
@@ -1182,167 +1057,178 @@ section,
 
 }
 
-
-/* Đáp ứng cho màn hình lớn hơn 768px */
-@media (max-width: 992px) {
-    .services .product-card {
-        width: 48%;
-        /* Hai cột trên màn hình tablet */
-        margin-bottom: 20px;
-    }
-
-    .services .service-title {
-        margin-left: 5%;
-        width: 30%;
-    }
-    .services .service-title h2 {
-        font-size: 1.3em;
-    }
-}
-
-/* Đáp ứng cho màn hình từ 768px trở xuống */
-@media (max-width: 768px) {
-    .services .product-card {
-        width: 100%;
-        /* Chiều rộng đầy đủ trên di động */
-        margin-bottom: 20px;
-    }
-
-    .services .product-card .card-head {
-        height: 60px;
-        /* Chiều cao nhỏ hơn cho phần đầu thẻ */
-    }
-
-    .services .product-card .card-head h3 {
-        font-size: 1.5rem;
-        /* Giảm kích thước font */
-    }
-
-    .services .card-body .combo-it span {
-        font-size: 1.1rem;
-        /* Kích thước chữ nhỏ hơn */
-    }
-
-    .services .card-footer {
-        flex-direction: column;
-        /* Các nút xếp theo hàng dọc */
-        align-items: stretch;
-    }
-
-    .services .card-footer .button {
-        width: 100%;
-        /* Nút chiếm chiều rộng đầy đủ */
-        padding: 8px;
-        margin: 5px 0;
-        /* Khoảng cách giữa các nút */
-    }
-
-    .services .service-title {
-        margin-left: auto;
-        margin-right: auto;
-        width: 60%; /* Chiều rộng vừa phải cho di động */
-        margin-top: 5%;
-        margin-bottom: 4%;
-    }
-    .services .service-title h2 {
-        font-size: 1.2em;
-        padding-top: 5%;
-    }
-}
-
-/* Đáp ứng cho màn hình rất nhỏ (576px trở xuống) */
-@media (max-width: 576px) {
-    .services .product-card .card-head h3 {
-        font-size: 1.2rem;
-        /* Giảm font chữ tiêu đề */
-    }
-
-    .services .card-body .combo-it span {
-        font-size: 1rem;
-        /* Kích thước font cho phần nội dung */
-    }
-
-    .services .card-footer .button {
-        padding: 6px;
-        font-size: 0.9rem;
-        margin: 5px 0;
-    }
-}
-
-
-/* Table Styling */
-.services .table-responsive {
-    overflow-x: auto;
+/*--------------------------------------------------------------
+# Recent Posts Section
+--------------------------------------------------------------*/
+.recent-posts .post-item {
+    background-color: var(--surface-color);
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+  }
+  
+  .recent-posts .post-item .post-img img {
+    transition: 0.5s;
+  }
+  
+  .recent-posts .post-item .post-date {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 6px 12px;
+    font-weight: 500;
+  }
+  
+  .recent-posts .post-item .post-content {
+    padding: 30px;
+  }
+  
+  .recent-posts .post-item .post-title {
+    color: var(--heading-color);
+    font-size: 1em;
+    font-weight: bolder;
+    transition: 0.3s;
+    margin-bottom: 15px;
+  }
+  
+  .recent-posts .post-item .meta i {
+    font-size: 1em;
+    color: var(--accent-color);
+  }
+  
+  .recent-posts .post-item .meta span {
+    font-size: 1em;
+    font-weight: bolder
+  }
+  
+  .recent-posts .post-item hr {
+    color: color-mix(in srgb, var(--default-color), transparent 80%);
+    margin: 20px 0;
+  }
+  
+  .recent-posts .post-item .readmore {
     display: flex;
-    justify-content: center;
-}
-
-.services .table {
-    border: 2px solid #EE0033;
-    width: auto;
-    margin: auto;
-    border-collapse: collapse;
-}
-
-.services .table th,
-.services .table td {
-    width: 190px;
-    text-align: center;
-    padding: 15px 10px;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-}
-
-.services .table thead th {
-    background-color: #EE0033;
-    font-weight: bold;
+    align-items: center;
+    font-weight: 600;
+    line-height: 1;
+    transition: 0.3s;
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
+  }
+  
+  .recent-posts .post-item .readmore i {
+    line-height: 0;
+    margin-left: 6px;
+    font-size: 16px;
+  }
+  
+  .recent-posts .post-item:hover .post-title,
+  .recent-posts .post-item:hover .readmore {
+    color: var(--accent-color);
+  }
+  
+  .recent-posts .post-item:hover .post-img img {
+    transform: scale(1.1);
+  }
+  
+  .recent-posts  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .recent-posts  .card-footer .button {
+    display: inline-block;
+    width: 200px;
+    padding: 0.8rem 2rem;
+    border-radius: 10px 20px;
+    text-decoration: none;
     color: white;
-    border-bottom: 2px solid #EE0033;
-}
-
-.services .table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.services .table tbody th {
-    width: 140px;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 0.5rem;
+    text-align: center;
+  }
+  
+  .recent-posts  .card-footer .btn-success {
+    background-color: #EE0033;
+  }
+  
+  .recent-posts .card-footer .btn-primary {
+    background-color: #666;
+  }
+  
+  .recent-posts .card-footer .button:hover {
+    background-color: #e84850;
+    transform: scale(1.05);
+  }
+  
+  .recent-posts  .card-footer .button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: left 0.4s ease;
+  }
+  
+  .recent-posts  .card-footer .button:hover::before {
+    left: 0;
+  }
+  
+  .recent-posts .card-footer .btn-success:hover {
+    background-color: #e84850;
+  }
+  
+  .recent-posts .chi-tiet span {
+    float: right;
+    font-size: 1em;
+    font-weight: bolder;
+    margin-right: 20px;
+    color: #EE0033;
+  }
+  
+  
+  .recent-posts-widget .post-item {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  
+  .recent-posts-widget .post-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .recent-posts-widget .post-item img {
+    width: 80px;
+    margin-right: 15px;
+  }
+  
+  .recent-posts-widget .post-item h4 {
+    font-size: 15px;
     font-weight: bold;
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-
-    .services .table th,
-    .services .table td {
-        width: auto;
-        /* Allow columns to shrink to fit the content */
-        padding: 10px 5px;
-        /* Reduce padding for smaller screens */
-        font-size: 0.9em;
-        /* Slightly smaller font size */
-    }
-
-    .services .table thead th {
-        font-size: 1em;
-        /* Maintain slightly larger font size for headers */
-    }
-}
-
-@media (max-width: 480px) {
-
-    .services .table th,
-    .services .table td {
-        padding: 8px 4px;
-        /* Further reduce padding on very small screens */
-        font-size: 0.8em;
-        /* Smaller font size for readability */
-    }
-
-    .services .table thead th {
-        font-size: 0.9em;
-    }
-}
-
+    margin-bottom: 5px;
+  }
+  
+  .recent-posts-widget .post-item h4 a {
+    color: var(--default-color);
+    transition: 0.3s;
+  }
+  
+  .recent-posts-widget .post-item h4 a:hover {
+    color: var(--accent-color);
+  }
+  
+  .recent-posts-widget .post-item time {
+    display: block;
+    font-style: italic;
+    font-size: 14px;
+    color: color-mix(in srgb, var(--default-color), transparent 50%);
+  }
+  
 
 
 /* SP thêm */
@@ -1355,7 +1241,7 @@ section,
     overflow: hidden;
     transition: transform 0.3s ease;
     padding: 10px;
-    height: 400px;
+    height: 750px;
     /* Chiều cao cố định để cân đối */
   }
   
@@ -1366,7 +1252,7 @@ section,
   .card-sp  .product-card img {
     width: 100%;
     /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng card */
-    height: 150px;
+    height: 250px;
     /* Chiều cao cố định để tất cả các hình đều giống nhau */
     object-fit: contain;
     /* Giữ nguyên tỷ lệ hình ảnh mà không làm méo */
@@ -1384,17 +1270,17 @@ section,
   }
   
   .card-sp  .product-card h4 {
-    font-size: 0.8rem;
+    font-size: 1rem;
     /* Giảm kích thước chữ cho tiêu đề */
     font-weight: 800;
-    margin-top: 5px;
+    margin-top: 15px;
     /* Giảm khoảng cách trên */
     color: #333;
     text-align: left;
   }
   
   .card-sp  .product-card h2 {
-    font-size: 1.3rem;
+    font-size: 2rem;
     /* Giảm kích thước chữ cho mô tả */
     color: #EE0033;
     font-weight: bolder;
@@ -1413,6 +1299,14 @@ section,
         max-width: 60%;
         margin-bottom: 35px;
         margin-left: 10px;
+    }
+
+    .card-sp  .product-card {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    .card-sp  .product-card h2{
+        font-size: 1.5em;
     }
   }
   
