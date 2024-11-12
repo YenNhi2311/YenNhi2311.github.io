@@ -1095,90 +1095,99 @@ section,
 }
 
 
-.uu-dai .col-lg-12 h3{
-   font-weight: bolder;
-   color: #EE0033;
+.uu-dai .col-lg-12 h3 {
+    font-weight: bolder;
+    color: #EE0033;
+    font-size: 2em;
+    margin-top: 20px;
 }
 
-.uu-dai .col-lg-12 span{
+.uu-dai .col-lg-12 {
+    border: solid 2px #df1529;
+    border-radius: 10px 10px;
+   
+}
+
+.uu-dai .col-lg-12 span {
     font-weight: bolder;
-    font-size: 1em;
+    font-size: 1.3em;
+   
 }
 
 
 /* *--------------------------------------------------------------
 # Contact Section
---------------------------------------------------------------*/ */
-.contact .info-item {
-  background: color-mix(in srgb, var(--default-color), transparent 96%);
-  padding: 10px;
+--------------------------------------------------------------*/
+*/ .contact .info-item {
+    background: color-mix(in srgb, var(--default-color), transparent 96%);
+    padding: 10px;
 }
 
 .contact .info-item i {
-  font-size: 38px;
-  line-height: 0;
-  color: var(--accent-color);
+    font-size: 38px;
+    line-height: 0;
+    color: var(--accent-color);
 }
 
 .contact .info-item h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 20px 0 10px 0;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px 0 10px 0;
 }
 
 .contact .info-item p {
-  padding: 0;
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
+    padding: 0;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
 }
 
 .contact .php-email-form {
-  background: color-mix(in srgb, var(--default-color), transparent 96%);
-  padding: 30px;
-  height: 100%;
+    background: color-mix(in srgb, var(--default-color), transparent 96%);
+    padding: 30px;
+    height: 100%;
 }
 
 .contact .php-email-form input[type=text],
 .contact .php-email-form input[type=email],
 .contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+    font-size: 14px;
+    padding: 10px 15px;
+    box-shadow: none;
+    border-radius: 0;
+    color: var(--default-color);
+    background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+    border-color: color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
 .contact .php-email-form input[type=text]:focus,
 .contact .php-email-form input[type=email]:focus,
 .contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 .contact .php-email-form input[type=text]::placeholder,
 .contact .php-email-form input[type=email]::placeholder,
 .contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
+    color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
 .contact .php-email-form button[type=submit] {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 4px;
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    border: 0;
+    padding: 10px 30px;
+    transition: 0.4s;
+    border-radius: 4px;
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+    background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
-.contact h2{
-  text-align: center;
-  font-weight: bolder;
+.contact h2 {
+    text-align: center;
+    font-weight: bolder;
 
 }
 
@@ -1195,6 +1204,7 @@ section,
         margin-left: 5%;
         width: 30%;
     }
+
     .services .service-title h2 {
         font-size: 1.3em;
     }
@@ -1240,10 +1250,12 @@ section,
     .services .service-title {
         margin-left: auto;
         margin-right: auto;
-        width: 60%; /* Chiều rộng vừa phải cho di động */
+        width: 60%;
+        /* Chiều rộng vừa phải cho di động */
         margin-top: 5%;
         margin-bottom: 4%;
     }
+
     .services .service-title h2 {
         font-size: 1.2em;
         padding-top: 5%;
@@ -1357,13 +1369,13 @@ section,
     padding: 10px;
     height: 400px;
     /* Chiều cao cố định để cân đối */
-  }
-  
-  .card-sp  .product-card:hover {
+}
+
+.card-sp .product-card:hover {
     transform: translateY(-5px);
-  }
-  
-  .card-sp  .product-card img {
+}
+
+.card-sp .product-card img {
     width: 100%;
     /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng card */
     height: 150px;
@@ -1374,16 +1386,16 @@ section,
     /* Căn giữa hình ảnh */
     display: block;
     /* Để margin: auto hoạt động */
-  }
-  
-  .card-sp  .product-card .card-body {
+}
+
+.card-sp .product-card .card-body {
     padding: 10px;
     /* Giảm padding trong card-body */
     text-align: center;
     margin-top: 20px;
-  }
-  
-  .card-sp  .product-card h4 {
+}
+
+.card-sp .product-card h4 {
     font-size: 0.8rem;
     /* Giảm kích thước chữ cho tiêu đề */
     font-weight: 800;
@@ -1391,43 +1403,43 @@ section,
     /* Giảm khoảng cách trên */
     color: #333;
     text-align: left;
-  }
-  
-  .card-sp  .product-card h2 {
+}
+
+.card-sp .product-card h2 {
     font-size: 1.3rem;
     /* Giảm kích thước chữ cho mô tả */
     color: #EE0033;
     font-weight: bolder;
-  }
-  
-  
-  
-  /* Responsive cho màn hình nhỏ hơn */
-  @media (max-width: 768px) {
-    .card-sp  .product-card img {
+}
+
+
+
+/* Responsive cho màn hình nhỏ hơn */
+@media (max-width: 768px) {
+    .card-sp .product-card img {
         height: 100px;
     }
-  
-    .card-sp  .col-md-3 {
+
+    .card-sp .col-md-3 {
         flex: 0 0 50%;
         max-width: 60%;
         margin-bottom: 35px;
         margin-left: 10px;
     }
-  }
-  
-  @media (max-width: 576px) {
-    .card-sp  .col-md-3 {
+}
+
+@media (max-width: 576px) {
+    .card-sp .col-md-3 {
         flex: 0 0 100%;
         max-width: 100%;
     }
-  
-    .card-sp  .product-card img {
+
+    .card-sp .product-card img {
         height: 180px;
     }
-  }
-  
-  
+}
+
+
 /*** Footer Start ***/
 .footer {
     background: #BBBBBB;
