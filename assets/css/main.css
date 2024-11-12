@@ -733,7 +733,7 @@ h6 {
 }
 
 .scroll-top i {
-  font-size: 28px;
+  font-size: 20px;
   color: var(--contrast-color);
 }
 
@@ -744,8 +744,8 @@ h6 {
 
 /* Định dạng cho nút Zalo */
 .scroll-zalo {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -756,8 +756,8 @@ h6 {
 }
 
 .scroll-zalo img {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
 }
 
 .scroll-zalo:hover {
@@ -771,8 +771,8 @@ h6 {
 
 /* Định dạng cho nút điện thoại */
 .scroll-phone {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -780,16 +780,17 @@ h6 {
   transition: all 0.4s;
   visibility: hidden;
   opacity: 0;
+  
   background-color: transparent; /* Bỏ background màu đỏ */
   position: relative; /* Đảm bảo phone-number được căn chỉnh đúng */
 }
 
 .scroll-phone i {
-  font-size: 15px; /* Tăng kích thước icon */
+  font-size: 30px; /* Tăng kích thước icon */
   color: white;
   padding: 5px; /* Tạo khoảng cách xung quanh icon */
   border: solid 2px #EE0033; /* Đường viền xung quanh */
-  border-radius: 50%; /* Để đường viền có hình tròn */
+  border-radius: 90%; /* Để đường viền có hình tròn */
   background-color: #EE0033; /* Màu nền của icon */
 }
 
@@ -802,7 +803,7 @@ h6 {
   display: inline-block; /* Hiển thị inline ngang với icon */
   position: absolute;
   right: 100%; /* Đặt số điện thoại bên trái icon */
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   width: 150px;
   border-radius: 10px 20px;
@@ -818,6 +819,7 @@ h6 {
 }
 
 /* Đảm bảo kích thước nhỏ hơn trên thiết bị di động */
+
 @media screen and (max-width: 768px) {
   .scroll-top, .scroll-zalo, .scroll-phone {
     width: 40px;
@@ -827,7 +829,7 @@ h6 {
   }
 
   .scroll-phone .phone-number {
-    font-size: 17px;
+    font-size: 10px;
   }
 
   .scroll-buttons {
