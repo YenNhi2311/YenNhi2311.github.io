@@ -1,0 +1,1509 @@
+/**
+* Template Name: FlexStart
+* Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+* Updated: Nov 01 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+/* Fonts */
+:root {
+    --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Nunito", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root {
+    --background-color: #ffffff;
+    /* Background color for the entire website, including individual sections */
+    --default-color: #444444;
+    /* Default color used for the majority of the text content across the entire website */
+    --heading-color: #060606;
+    /* Color for headings, subheadings and title throughout the website */
+    --accent-color: #EE0033;
+    /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+    --surface-color: #ffffff;
+    /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+    --contrast-color: #ffffff;
+    /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+    --nav-color: #060606;
+    /* The default color of the main navmenu links */
+    --nav-hover-color: #EE0033;
+    /* Applied to main navmenu links when they are hovered over or active */
+    --nav-mobile-background-color: #ffffff;
+    /* Used as the background color for mobile navigation menu */
+    --nav-dropdown-background-color: #ffffff;
+    /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+    --nav-dropdown-color: #212529;
+    /* Used for navigation links of the dropdown items in the navigation menu. */
+    --nav-dropdown-hover-color: #EE0033;
+    /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
+.light-background {
+    --background-color: #f9f9f9;
+    --surface-color: #ffffff;
+}
+
+.dark-background {
+    --background-color: #060606;
+    --default-color: #ffffff;
+    --heading-color: #ffffff;
+    --surface-color: #252525;
+    --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root html {
+    scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+  # General Styling & Shared Classes
+  --------------------------------------------------------------*/
+body {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    font-family: var(--default-font);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+a:hover {
+    color: color-mix(in srgb, var(--accent-color), transparent 25%);
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+}
+
+/* PHP Email Form Messages
+  ------------------------------*/
+.php-email-form .error-message {
+    display: none;
+    background: #df1529;
+    color: #ffffff;
+    text-align: left;
+    padding: 15px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.php-email-form .sent-message {
+    display: none;
+    color: #ffffff;
+    background: #059652;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.php-email-form .loading {
+    display: none;
+    background: var(--surface-color);
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 24px;
+}
+
+.php-email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid var(--accent-color);
+    border-top-color: var(--surface-color);
+    animation: php-email-form-loading 1s linear infinite;
+}
+
+@keyframes php-email-form-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*--------------------------------------------------------------
+  # Global Header
+  --------------------------------------------------------------*/
+.header {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 20px 0;
+    transition: all 0.5s;
+    z-index: 997;
+}
+
+.header .logo {
+    line-height: 1;
+}
+
+.header .logo img {
+    max-height: 36px;
+    margin-right: 8px;
+}
+
+.header .logo h1 {
+    font-size: 30px;
+    margin: 0;
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+.header .btn-getstarted,
+.header .btn-getstarted:focus {
+    color: var(--contrast-color);
+    background: var(--accent-color);
+    font-size: 15px;
+    padding: 8px 25px;
+    margin: 0 0 0 30px;
+    border-radius: 4px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.header .btn-getstarted:hover,
+.header .btn-getstarted:focus:hover {
+    color: var(--contrast-color);
+    background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+@media (max-width: 1200px) {
+    .header .logo {
+        order: 1;
+    }
+
+    .header .btn-getstarted {
+        order: 2;
+        margin: 0 15px 0 0;
+        padding: 6px 15px;
+    }
+
+    .header .navmenu {
+        order: 3;
+    }
+}
+
+.scrolled .header {
+    box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Index Page Header
+  ------------------------------*/
+.index-page .header {
+    --background-color: rgba(255, 255, 255, 0);
+}
+
+/* Index Page Header on Scroll
+  ------------------------------*/
+.index-page.scrolled .header {
+    --background-color: #ffffff;
+}
+
+/*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+/* Navmenu - Desktop */
+@media (min-width: 1200px) {
+    .navmenu {
+        padding: 0;
+    }
+
+    .navmenu ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        align-items: center;
+    }
+
+    .navmenu li {
+        position: relative;
+    }
+
+    .navmenu a,
+    .navmenu a:focus {
+        color: var(--nav-color);
+        padding: 18px 12px;
+        font-size: 15px;
+        font-family: var(--nav-font);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        transition: 0.3s;
+    }
+
+    .navmenu a i,
+    .navmenu a:focus i {
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
+        transition: 0.3s;
+    }
+
+    .navmenu li:last-child a {
+        padding-right: 0;
+    }
+
+    .navmenu li:hover>a,
+    .navmenu .active,
+    .navmenu .active:focus {
+        color: var(--nav-hover-color);
+    }
+
+    .navmenu .dropdown ul {
+        margin: 0;
+        padding: 10px 0;
+        background: var(--nav-dropdown-background-color);
+        display: block;
+        position: absolute;
+        visibility: hidden;
+        left: 14px;
+        top: 130%;
+        opacity: 0;
+        transition: 0.3s;
+        border-radius: 4px;
+        z-index: 99;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .navmenu .dropdown ul li {
+        min-width: 200px;
+    }
+
+    .navmenu .dropdown ul a {
+        padding: 10px 20px;
+        font-size: 15px;
+        text-transform: none;
+        color: var(--nav-dropdown-color);
+    }
+
+    .navmenu .dropdown ul a i {
+        font-size: 12px;
+    }
+
+    .navmenu .dropdown ul a:hover,
+    .navmenu .dropdown ul .active:hover,
+    .navmenu .dropdown ul li:hover>a {
+        color: var(--nav-dropdown-hover-color);
+    }
+
+    .navmenu .dropdown:hover>ul {
+        opacity: 1;
+        top: 100%;
+        visibility: visible;
+    }
+
+    .navmenu .dropdown .dropdown ul {
+        top: 0;
+        left: -90%;
+        visibility: hidden;
+    }
+
+    .navmenu .dropdown .dropdown:hover>ul {
+        opacity: 1;
+        top: 0;
+        left: -100%;
+        visibility: visible;
+    }
+}
+
+/* Navmenu - Mobile */
+@media (max-width: 1199px) {
+    .mobile-nav-toggle {
+        color: var(--nav-color);
+        font-size: 28px;
+        line-height: 0;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .navmenu {
+        padding: 0;
+        z-index: 9997;
+    }
+
+    .navmenu ul {
+        display: none;
+        list-style: none;
+        position: absolute;
+        inset: 60px 20px 20px 20px;
+        padding: 10px 0;
+        margin: 0;
+        border-radius: 6px;
+        background-color: var(--nav-mobile-background-color);
+        overflow-y: auto;
+        transition: 0.3s;
+        z-index: 9998;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .navmenu a,
+    .navmenu a:focus {
+        color: var(--nav-dropdown-color);
+        padding: 10px 20px;
+        font-family: var(--nav-font);
+        font-size: 17px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        transition: 0.3s;
+    }
+
+    .navmenu a i,
+    .navmenu a:focus i {
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: 0.3s;
+        background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+    }
+
+    .navmenu a i:hover,
+    .navmenu a:focus i:hover {
+        background-color: var(--accent-color);
+        color: var(--contrast-color);
+    }
+
+    .navmenu a:hover,
+    .navmenu .active,
+    .navmenu .active:focus {
+        color: var(--nav-dropdown-hover-color);
+    }
+
+    .navmenu .active i,
+    .navmenu .active:focus i {
+        background-color: var(--accent-color);
+        color: var(--contrast-color);
+        transform: rotate(180deg);
+    }
+
+    .navmenu .dropdown ul {
+        position: static;
+        display: none;
+        z-index: 99;
+        padding: 10px 0;
+        margin: 10px 20px;
+        background-color: var(--nav-dropdown-background-color);
+        border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+        box-shadow: none;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .navmenu .dropdown ul ul {
+        background-color: rgba(33, 37, 41, 0.1);
+    }
+
+    .navmenu .dropdown>.dropdown-active {
+        display: block;
+        background-color: rgba(33, 37, 41, 0.03);
+    }
+
+    .mobile-nav-active {
+        overflow: hidden;
+    }
+
+    .mobile-nav-active .mobile-nav-toggle {
+        color: #fff;
+        position: absolute;
+        font-size: 32px;
+        top: 15px;
+        right: 15px;
+        margin-right: 0;
+        z-index: 9999;
+    }
+
+    .mobile-nav-active .navmenu {
+        position: fixed;
+        overflow: hidden;
+        inset: 0;
+        background: rgba(33, 37, 41, 0.8);
+        transition: 0.3s;
+    }
+
+    .mobile-nav-active .navmenu>ul {
+        display: block;
+    }
+}
+
+/* Listing Dropdown - Desktop */
+@media (min-width: 1200px) {
+    .navmenu .listing-dropdown {
+        position: static;
+    }
+
+    .navmenu .listing-dropdown ul {
+        margin: 0;
+        padding: 10px;
+        background: var(--nav-dropdown-background-color);
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 130%;
+        left: 0;
+        right: 0;
+        visibility: hidden;
+        opacity: 0;
+        display: flex;
+        transition: 0.3s;
+        border-radius: 4px;
+        z-index: 99;
+    }
+
+    .navmenu .listing-dropdown ul li {
+        flex: 1;
+    }
+
+    .navmenu .listing-dropdown ul li a,
+    .navmenu .listing-dropdown ul li:hover>a {
+        padding: 10px 20px;
+        font-size: 15px;
+        color: var(--nav-dropdown-color);
+        background-color: var(--nav-dropdown-background-color);
+    }
+
+    .navmenu .listing-dropdown ul li a:hover,
+    .navmenu .listing-dropdown ul li .active,
+    .navmenu .listing-dropdown ul li .active:hover {
+        color: var(--nav-dropdown-hover-color);
+        background-color: var(--nav-dropdown-background-color);
+    }
+
+    .navmenu .listing-dropdown:hover>ul {
+        opacity: 1;
+        top: 100%;
+        visibility: visible;
+    }
+}
+
+/* Listing Dropdown - Mobile */
+@media (max-width: 1199px) {
+    .navmenu .listing-dropdown ul {
+        position: static;
+        display: none;
+        z-index: 99;
+        padding: 10px 0;
+        margin: 10px 20px;
+        background-color: var(--nav-dropdown-background-color);
+        border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+        box-shadow: none;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .navmenu .listing-dropdown ul ul {
+        background-color: rgba(33, 37, 41, 0.1);
+    }
+
+    .navmenu .listing-dropdown>.dropdown-active {
+        display: block;
+        background-color: rgba(33, 37, 41, 0.03);
+    }
+}
+
+/*--------------------------------------------------------------
+  # Global Footer
+  --------------------------------------------------------------*/
+.footer {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    font-size: 14px;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.footer .footer-newsletter {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
+    border-top: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+    border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+    padding: 50px 0;
+}
+
+.footer .footer-newsletter h4 {
+    font-size: 24px;
+}
+
+.footer .footer-newsletter .newsletter-form {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding: 6px 8px;
+    position: relative;
+    background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+
+.footer .footer-newsletter .newsletter-form:focus-within {
+    border-color: var(--accent-color);
+}
+
+.footer .footer-newsletter .newsletter-form input[type=email] {
+    border: 0;
+    padding: 4px;
+    width: 100%;
+    background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+    color: var(--default-color);
+}
+
+.footer .footer-newsletter .newsletter-form input[type=email]:focus-visible {
+    outline: none;
+}
+
+.footer .footer-newsletter .newsletter-form input[type=submit] {
+    border: 0;
+    font-size: 16px;
+    padding: 0 20px;
+    margin: -7px -8px -7px 0;
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    transition: 0.3s;
+    border-radius: 0 4px 4px 0;
+}
+
+.footer .footer-newsletter .newsletter-form input[type=submit]:hover {
+    background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.footer .footer-top {
+    padding-top: 50px;
+}
+
+.footer .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+    font-size: 16px;
+    color: var(--accent-color);
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+    color: var(--contrast-color);
+    background-color: var(--accent-color);
+}
+
+.footer h4 {
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer .footer-links {
+    margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .footer-links ul i {
+    margin-right: 3px;
+    font-size: 12px;
+    line-height: 0;
+    color: var(--accent-color);
+}
+
+.footer .footer-links ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+    padding-top: 0;
+}
+
+.footer .footer-links ul a {
+    display: inline-block;
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    line-height: 1;
+}
+
+.footer .footer-links ul a:hover {
+    color: var(--accent-color);
+}
+
+.footer .footer-about a {
+    color: var(--heading-color);
+    font-size: 24px;
+    font-weight: 600;
+    font-family: var(--heading-font);
+}
+
+.footer .footer-contact p {
+    margin-bottom: 5px;
+}
+
+.footer .copyright {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .copyright p {
+    margin-bottom: 0;
+}
+
+.footer .credits {
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+/* Container để nhóm các nút Zalo và nút cuộn lên theo chiều dọc */
+/* Định dạng chung cho các nút */
+.scroll-buttons {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    /* Các nút ở dưới cùng */
+    display: flex;
+    flex-direction: column;
+    /* Sắp xếp các nút theo chiều dọc */
+    gap: 10px;
+    /* Khoảng cách giữa các nút */
+    z-index: 99999;
+}
+
+/* Định dạng cho nút cuộn lên trên */
+.scroll-top {
+    visibility: hidden;
+    opacity: 0;
+    background-color: var(--accent-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s;
+}
+
+.scroll-top i {
+    font-size: 28px;
+    color: var(--contrast-color);
+}
+
+.scroll-top.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Định dạng cho nút Zalo */
+.scroll-zalo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.scroll-zalo img {
+    width: 60px;
+    height: 60px;
+}
+
+.scroll-zalo:hover {
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-zalo.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Định dạng cho nút điện thoại */
+.scroll-phone {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+    background-color: transparent;
+    /* Bỏ background màu đỏ */
+    position: relative;
+    /* Đảm bảo phone-number được căn chỉnh đúng */
+}
+
+.scroll-phone i {
+    font-size: 10px;
+    /* Tăng kích thước icon */
+    color: white;
+    padding: 5px;
+    /* Tạo khoảng cách xung quanh icon */
+    border: solid 2px #EE0033;
+    /* Đường viền xung quanh */
+    border-radius: 50%;
+    /* Để đường viền có hình tròn */
+    background-color: #EE0033;
+    /* Màu nền của icon */
+}
+
+
+.scroll-phone .phone-number:hover {
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-phone .phone-number {
+    display: inline-block;
+    /* Hiển thị inline ngang với icon */
+    position: absolute;
+    right: 100%;
+    /* Đặt số điện thoại bên trái icon */
+    font-size: 20px;
+    text-align: center;
+    width: 150px;
+    border-radius: 10px 20px;
+    color: white;
+    border: solid 1px #EE0033;
+    background-color: #EE0033;
+    /* Màu icon */
+}
+
+/* Hiển thị tất cả các nút khi active */
+.scroll-phone.active,
+.scroll-zalo.active,
+.scroll-top.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Đảm bảo kích thước nhỏ hơn trên thiết bị di động */
+@media screen and (max-width: 768px) {
+
+    .scroll-top,
+    .scroll-zalo,
+    .scroll-phone {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 30px;
+        margin-left: 40px;
+    }
+
+    .scroll-phone .phone-number {
+        font-size: 17px;
+    }
+
+    .scroll-buttons {
+        right: 10px;
+        bottom: 10px;
+        gap: 8px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+    [data-aos-delay] {
+        transition-delay: 0 !important;
+    }
+}
+
+/*--------------------------------------------------------------
+  # Global Page Titles & Breadcrumbs
+  --------------------------------------------------------------*/
+.page-title {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    position: relative;
+}
+
+.page-title .heading {
+    padding: 80px 0;
+    border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.page-title .heading h1 {
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.page-title nav {
+    background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+    padding: 20px 0;
+}
+
+.page-title nav ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.page-title nav ol li+li {
+    padding-left: 10px;
+}
+
+.page-title nav ol li+li::before {
+    content: "/";
+    display: inline-block;
+    padding-right: 10px;
+    color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+/*--------------------------------------------------------------
+  # Global Sections
+  --------------------------------------------------------------*/
+section,
+.section {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    scroll-margin-top: 98px;
+    overflow: clip;
+}
+
+@media (max-width: 1199px) {
+
+    section,
+    .section {
+        scroll-margin-top: 56px;
+    }
+}
+
+/*--------------------------------------------------------------
+  # Global Section Titles
+  --------------------------------------------------------------*/
+.section-title {
+    text-align: center;
+    padding-bottom: 40px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    padding: 8px 20px;
+    margin: 0;
+    background: color-mix(in srgb, var(--accent-color), transparent 90%);
+    color: var(--accent-color);
+    display: inline-block;
+    text-transform: capitalize;
+    border-radius: 50px;
+    font-family: var(--default-font);
+}
+
+.section-title p {
+    color: var(--heading-color);
+    margin: 10px 0 0 0;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: var(--heading-font);
+}
+
+.section-title p .description-title {
+    color: var(--accent-color);
+}
+
+
+/* # Hero Section */
+
+.hero {
+    width: 100%;
+    min-height: 30vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: url(../img/hero-bg.png) top center no-repeat;
+    background-size: cover;
+}
+
+
+
+/* General styles for larger screens */
+/* Product Card Styling */
+/* Cấu trúc chính cho Product Card */
+.services .product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+    height: auto;
+    max-width: 350px;
+}
+
+.services .service-title {
+    margin-left: 9%;
+    margin-top: 4%;
+    margin-bottom: 3%;
+    border: solid 2px #df1529;
+    background-color: #ee0033;
+    text-align: center;
+    width: 20%;
+    border-radius: 10px 20px;
+
+}
+
+.services .service-title h2 {
+    font-weight: bolder;
+    color: white;
+    font-size: 1.5em;
+    padding-top: 3%;
+}
+
+/* Hiệu ứng phóng to khi hover */
+.services .product-card:hover {
+    transform: scale(1.02);
+}
+
+/* Phần đầu của Product Card */
+.services .product-card .card-head {
+    background-image: url('../img/img-supernet.svg');
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services .product-card .card-head h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: bold;
+}
+
+/* Nội dung trong Product Card */
+.services .product-card .card-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.services .card-body .combo-it {
+    display: flex;
+    align-items: center;
+}
+
+.services .card-body .combo-it .img {
+    width: 30px;
+    margin-right: 1rem;
+}
+
+.services .card-body .combo-it span {
+    font-size: 1.2rem;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Footer chứa các nút trong Product Card */
+.services .product-card .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.services .card-footer .button {
+    width: 120px;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.services .card-footer .btn-success {
+    background-color: #ee0033;
+}
+
+.services .card-footer .btn-primary {
+    background-color: #666;
+}
+
+.services .card-footer .button:hover {
+    transform: scale(1.05);
+    background-color: #e84850;
+}
+
+
+.uu-dai .col-lg-12 h3{
+   font-weight: bolder;
+   color: #EE0033;
+}
+
+.uu-dai .col-lg-12 span{
+    font-weight: bolder;
+    font-size: 1em;
+}
+
+
+/* *--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/ */
+.contact .info-item {
+  background: color-mix(in srgb, var(--default-color), transparent 96%);
+  padding: 10px;
+}
+
+.contact .info-item i {
+  font-size: 38px;
+  line-height: 0;
+  color: var(--accent-color);
+}
+
+.contact .info-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+}
+
+.contact .info-item p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.contact .php-email-form {
+  background: color-mix(in srgb, var(--default-color), transparent 96%);
+  padding: 30px;
+  height: 100%;
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email],
+.contact .php-email-form textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--default-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.contact .php-email-form input[type=text]::placeholder,
+.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.contact .php-email-form button[type=submit] {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.contact h2{
+  text-align: center;
+  font-weight: bolder;
+
+}
+
+
+/* Đáp ứng cho màn hình lớn hơn 768px */
+@media (max-width: 992px) {
+    .services .product-card {
+        width: 48%;
+        /* Hai cột trên màn hình tablet */
+        margin-bottom: 20px;
+    }
+
+    .services .service-title {
+        margin-left: 5%;
+        width: 30%;
+    }
+    .services .service-title h2 {
+        font-size: 1.3em;
+    }
+}
+
+/* Đáp ứng cho màn hình từ 768px trở xuống */
+@media (max-width: 768px) {
+    .services .product-card {
+        width: 100%;
+        /* Chiều rộng đầy đủ trên di động */
+        margin-bottom: 20px;
+    }
+
+    .services .product-card .card-head {
+        height: 60px;
+        /* Chiều cao nhỏ hơn cho phần đầu thẻ */
+    }
+
+    .services .product-card .card-head h3 {
+        font-size: 1.5rem;
+        /* Giảm kích thước font */
+    }
+
+    .services .card-body .combo-it span {
+        font-size: 1.1rem;
+        /* Kích thước chữ nhỏ hơn */
+    }
+
+    .services .card-footer {
+        flex-direction: column;
+        /* Các nút xếp theo hàng dọc */
+        align-items: stretch;
+    }
+
+    .services .card-footer .button {
+        width: 100%;
+        /* Nút chiếm chiều rộng đầy đủ */
+        padding: 8px;
+        margin: 5px 0;
+        /* Khoảng cách giữa các nút */
+    }
+
+    .services .service-title {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%; /* Chiều rộng vừa phải cho di động */
+        margin-top: 5%;
+        margin-bottom: 4%;
+    }
+    .services .service-title h2 {
+        font-size: 1.2em;
+        padding-top: 5%;
+    }
+}
+
+/* Đáp ứng cho màn hình rất nhỏ (576px trở xuống) */
+@media (max-width: 576px) {
+    .services .product-card .card-head h3 {
+        font-size: 1.2rem;
+        /* Giảm font chữ tiêu đề */
+    }
+
+    .services .card-body .combo-it span {
+        font-size: 1rem;
+        /* Kích thước font cho phần nội dung */
+    }
+
+    .services .card-footer .button {
+        padding: 6px;
+        font-size: 0.9rem;
+        margin: 5px 0;
+    }
+}
+
+
+/* Table Styling */
+.services .table-responsive {
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.services .table {
+    border: 2px solid #EE0033;
+    width: auto;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.services .table th,
+.services .table td {
+    width: 190px;
+    text-align: center;
+    padding: 15px 10px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.services .table thead th {
+    background-color: #EE0033;
+    font-weight: bold;
+    color: white;
+    border-bottom: 2px solid #EE0033;
+}
+
+.services .table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.services .table tbody th {
+    width: 140px;
+    font-weight: bold;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+
+    .services .table th,
+    .services .table td {
+        width: auto;
+        /* Allow columns to shrink to fit the content */
+        padding: 10px 5px;
+        /* Reduce padding for smaller screens */
+        font-size: 0.9em;
+        /* Slightly smaller font size */
+    }
+
+    .services .table thead th {
+        font-size: 1em;
+        /* Maintain slightly larger font size for headers */
+    }
+}
+
+@media (max-width: 480px) {
+
+    .services .table th,
+    .services .table td {
+        padding: 8px 4px;
+        /* Further reduce padding on very small screens */
+        font-size: 0.8em;
+        /* Smaller font size for readability */
+    }
+
+    .services .table thead th {
+        font-size: 0.9em;
+    }
+}
+
+
+
+/* SP thêm */
+
+.card-sp .product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    padding: 10px;
+    height: 300px;
+    /* Chiều cao cố định để cân đối */
+  }
+  
+  .card-sp  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-sp  .product-card img {
+    width: 100%;
+    /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng card */
+    height: 150px;
+    /* Chiều cao cố định để tất cả các hình đều giống nhau */
+    object-fit: contain;
+    /* Giữ nguyên tỷ lệ hình ảnh mà không làm méo */
+    margin: 0 auto;
+    /* Căn giữa hình ảnh */
+    display: block;
+    /* Để margin: auto hoạt động */
+  }
+  
+  .card-sp  .product-card .card-body {
+    padding: 10px;
+    /* Giảm padding trong card-body */
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .card-sp  .product-card h4 {
+    font-size: 1.0rem;
+    /* Giảm kích thước chữ cho tiêu đề */
+    font-weight: 600;
+    margin-top: 5px;
+    /* Giảm khoảng cách trên */
+    color: #333;
+  }
+  
+  .card-sp  .product-card h2 {
+    font-size: 2.0rem;
+    /* Giảm kích thước chữ cho mô tả */
+    color: #333;
+    font-weight: bolder;
+  }
+  
+  
+  
+  /* Responsive cho màn hình nhỏ hơn */
+  @media (max-width: 768px) {
+    .card-sp  .product-card img {
+        height: 100px;
+    }
+  
+    .card-sp  .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 60%;
+        margin-bottom: 35px;
+        margin-left: 10px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .card-sp  .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+  
+    .card-sp  .product-card img {
+        height: 180px;
+    }
+  }
+  
+/*** Footer Start ***/
+.footer {
+    background: #BBBBBB;
+}
+
+.footer .footer-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .footer-item a {
+    line-height: 35px;
+    color: var(--bs-body);
+    transition: 0.5s;
+}
+
+.footer .footer-item p {
+    line-height: 35px;
+}
+
+.footer .footer-item a:hover {
+    color: var(--bs-danger);
+}
+
+.footer .footer-item .footer-btn a,
+.footer .footer-item .footer-btn a i {
+    transition: 0.5s;
+}
+
+.footer .footer-item .footer-btn a:hover {
+    background: var(--bs-white);
+}
+
+.footer .footer-item .footer-btn a:hover i {
+    color: var(--bs-danger);
+}
+
+
+.footer .footer-item .footer-instagram {
+    position: relative;
+    overflow: hidden;
+}
+
+.footer .footer-item .footer-instagram img {
+    transition: 0.5s;
+}
+
+.footer .footer-item .footer-instagram:hover img {
+    transform: scale(1.2);
+}
+
+.footer .footer-item .footer-instagram .footer-search-icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.footer .footer-item .footer-instagram:hover .footer-search-icon {
+    opacity: 1;
+    background: rgba(0, 0, 0, .6);
+}
+
+.footer .footer-item .footer-btn a {
+    background: var(--bs-light);
+    color: var(--bs-danger);
+}
+
+.footer .footer-item .footer-btn a:hover {
+    background: var(--bs-danger);
+}
+
+.footer .footer-item .footer-btn a:hover i {
+    color: var(--bs-white);
+}

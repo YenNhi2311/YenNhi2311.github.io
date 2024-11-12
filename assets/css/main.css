@@ -822,10 +822,12 @@ h6 {
   .scroll-top, .scroll-zalo, .scroll-phone {
     width: 40px;
     height: 40px;
+    margin-bottom: 30px;
+    margin-left: 40px;
   }
 
   .scroll-phone .phone-number {
-    font-size: 12px;
+    font-size: 17px;
   }
 
   .scroll-buttons {
@@ -1072,8 +1074,6 @@ section,
 # services Section
 --------------------------------------------------------------*/
 
-
-
 .values .product-card .card-head {
   background-image: url('../img/img-similar-pack.svg');
   height: 100px;
@@ -1122,7 +1122,7 @@ section,
 }
 
 .values .card-body .combo-it span {
-  font-size: 1.3rem;
+  font-size: 1rem;
   max-width: 500px;
   font-weight: bold;
   white-space: nowrap;
@@ -1207,13 +1207,9 @@ section,
   border-radius: 20px 10px;
 }
 
-/*--------------------------------------------------------------
-/*--------------------------------------------------------------
 
-/*--------------------------------------------------------------
-# Services Section
---------------------------------------------------------------*/
 /* General styles for larger screens */
+/* Product Card Styling */
 .services .product-card {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -1221,48 +1217,47 @@ section,
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
-  padding: 0px;
+  padding: 0;
   margin: 0;
-  height: 350px;
+  height: 380px;
   width: 300px;
 }
 
+.services .product-card:hover {
+  transform: scale(1.02);
+}
 
+/* Card Head Styling */
 .services .product-card .card-head {
   background-image: url('../img/img-supernet.svg');
-  height: 80px;
+  height: 100px;
   background-size: cover;
   background-position: center;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: transform 0.3s ease;
-  transform: scale(0.95);
 }
 
-.services .product-card .card-head:hover {
-  background-size: 120%; /* Zoom background on hover */
-}
 
 .services .product-card .card-head h3 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: white;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
+/* Card Body Styling */
 .services .product-card .card-body {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  gap: 10px;
 }
 
 .services .card-body .combo-it {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
 }
 
 .services .card-body .combo-it .img {
@@ -1270,74 +1265,15 @@ section,
   margin-right: 1rem;
 }
 
-.services .card-body .combo-it img {
-  width: 100%;
-  height: auto;
-}
-
 .services .card-body .combo-it span {
-  font-size: 1em;
-  max-width: 100%; /* Ensure full width usage */
-  max-height: 50px;
-  white-space: normal;
-  overflow-y: auto;
+  font-size: 1.2rem;
+  color: #333;
+  overflow: hidden;
   text-overflow: ellipsis;
-  padding-right: 5px;
+  white-space: nowrap;
 }
 
-.services .card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 40px;
-}
-.services .card-footer .button {
-  display: inline-block;
-  width: 200px;
-  padding: 0.8rem 2rem;
-  border-radius: 10px 20px;
-  text-decoration: none;
-  color: white;
-  position: relative;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  margin: 0.5rem;
-  text-align: center;
-}
-
-.services .card-footer .btn-success {
-  background-color: #EE0033;
-}
-
-.services .card-footer .btn-primary {
-  background-color: #666;
-}
-
-.services .card-footer .button:hover {
-  background-color: #e84850;
-  transform: scale(1.05);
-}
-
-.services .card-footer .button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
-  transition: left 0.4s ease;
-}
-
-.services .card-footer .button:hover::before {
-  left: 0;
-}
-
-.services .card-footer .btn-success:hover {
-  background-color: #e84850;
-}
-
-
-.services .chi-tiet span {
+.services  .chi-tiet span {
   float: right;
   font-size: 1em;
   font-weight: bolder;
@@ -1345,70 +1281,236 @@ section,
   color: #EE0033;
 }
 
-/* Responsive adjustments for tablets and below */
-@media (max-width: 992px) {
-  .services .product-card {
-    width: 48%; /* Two columns on tablet screens */
-    height: auto;
-    margin-bottom: 20px;
+
+/* Card Footer Styling */
+.services .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.services .card-footer .button {
+  width: 120px;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.services .card-footer .btn-success {
+  background-color: #ee0033;
+}
+
+.services .card-footer .btn-primary {
+  background-color: #666;
+}
+
+.services .card-footer .button:hover {
+  transform: scale(1.05);
+  background-color: #e84850;
+}
+
+/* Table Styling */
+.services .table-responsive {
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.services .table {
+  border: 2px solid #EE0033;
+  width: auto;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+.services .table th,
+.services .table td {
+  width: 190px;
+  text-align: center;
+  padding: 15px 10px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+  .services .table thead th {
+    background-color: #EE0033;
+    font-weight: bold;
+    color: white;
+    border-bottom: 2px solid #EE0033;
   }
 
-  .services .col-lg-3 {
-    width: 48%;
+.services .table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.services .table tbody th {
+  width: 140px;
+  font-weight: bold;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .services .table th,
+  .services .table td {
+    width: auto; /* Allow columns to shrink to fit the content */
+    padding: 10px 5px; /* Reduce padding for smaller screens */
+    font-size: 0.9em; /* Slightly smaller font size */
+  }
+  
+  .services .table thead th {
+    font-size: 1em; /* Maintain slightly larger font size for headers */
   }
 }
 
-/* Responsive adjustments for smaller screens (mobile) */
+@media (max-width: 480px) {
+  .services .table th,
+  .services .table td {
+    padding: 8px 4px; /* Further reduce padding on very small screens */
+    font-size: 0.8em; /* Smaller font size for readability */
+  }
+
+  .services .table thead th {
+    font-size: 0.9em;
+  }
+}
+
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .services .product-card {
+    width: 48%; /* Two columns on tablet screens */
+    margin-bottom: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .services .product-card {
     width: 100%; /* Full width on mobile */
-    height: auto;
     margin-bottom: 20px;
   }
 
-  .services .col-lg-3 {
-    width: 100%; /* Full width for column */
+  .services .product-card .card-head {
+    height: 60px;
   }
 
-  .services .product-card .card-head {
-    height: 60px; /* Reduce height for smaller screens */
+  .services .card-body .combo-it span{
+    font-size: 1.3rem;
   }
 
   .services .product-card .card-head h3 {
     font-size: 1.5rem;
   }
 
-  .services .card-body .combo-it span {
-    font-size: 0.9em;
-    max-height: 40px;
-  }
-
   .services .card-footer {
     flex-direction: column;
+    align-items: stretch;
   }
 
   .services .card-footer .button {
-    width: 80%;
-    margin: 0.5rem 0;
-    padding: 0.6rem 1rem;
-  
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
   }
-
 }
 
-/* Extra small screens (like phones in portrait mode) */
 @media (max-width: 576px) {
   .services .product-card .card-head h3 {
     font-size: 1.2rem;
   }
 
   .services .card-body .combo-it span {
-    font-size: 0.8em;
-    max-height: 35px;
+    font-size: 1.2em;
   }
 
   .services .card-footer .button {
-    padding: 0.5rem 0.8rem;
+    padding: 6px;
+    font-size: 0.9rem;
+  }
+}
+
+/* SP thêm */
+
+.card-sp .product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  padding: 10px;
+  height: 300px;
+  /* Chiều cao cố định để cân đối */
+}
+
+.card-sp  .product-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-sp  .product-card img {
+  width: 100%;
+  /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng card */
+  height: 150px;
+  /* Chiều cao cố định để tất cả các hình đều giống nhau */
+  object-fit: contain;
+  /* Giữ nguyên tỷ lệ hình ảnh mà không làm méo */
+  margin: 0 auto;
+  /* Căn giữa hình ảnh */
+  display: block;
+  /* Để margin: auto hoạt động */
+}
+
+.card-sp  .product-card .card-body {
+  padding: 10px;
+  /* Giảm padding trong card-body */
+  text-align: center;
+  margin-top: 20px;
+}
+
+.card-sp  .product-card h4 {
+  font-size: 1.0rem;
+  /* Giảm kích thước chữ cho tiêu đề */
+  font-weight: 600;
+  margin-top: 5px;
+  /* Giảm khoảng cách trên */
+  color: #333;
+}
+
+.card-sp  .product-card h2 {
+  font-size: 2.0rem;
+  /* Giảm kích thước chữ cho mô tả */
+  color: #333;
+  font-weight: bolder;
+}
+
+
+
+/* Responsive cho màn hình nhỏ hơn */
+@media (max-width: 768px) {
+  .card-sp  .product-card img {
+      height: 100px;
+  }
+
+  .card-sp  .col-md-3 {
+      flex: 0 0 50%;
+      max-width: 60%;
+      margin-bottom: 35px;
+      margin-left: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-sp  .col-md-3 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+
+  .card-sp  .product-card img {
+      height: 180px;
   }
 }
 
@@ -1486,8 +1588,8 @@ section,
 
 .pricing  .card-footer .button {
   display: inline-block;
-  width: 200px;
-  padding: 0.8rem 2rem;
+  width: 100px;
+  padding: 10px;
   border-radius: 10px 20px;
   text-decoration: none;
   color: white;
@@ -1633,132 +1735,6 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Team Section
---------------------------------------------------------------*/
-/* .team .team-member {
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  text-align: center;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.team .team-member .member-img {
-  position: relative;
-  overflow: hidden;
-}
-
-.team .team-member .member-img:after {
-  position: absolute;
-  content: "";
-  left: -1px;
-  right: -1px;
-  bottom: -1px;
-  height: 100%;
-  background-color: var(--surface-color);
-  -webkit-mask: url("../img/team-shape.svg") no-repeat center bottom;
-  mask: url("../img/team-shape.svg") no-repeat center bottom;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  z-index: 1;
-}
-
-.team .team-member .social {
-  position: absolute;
-  right: -100%;
-  top: 30px;
-  opacity: 0;
-  border-radius: 4px;
-  transition: 0.5s;
-  background: color-mix(in srgb, var(--background-color), transparent 60%);
-  z-index: 2;
-}
-
-.team .team-member .social a {
-  transition: color 0.3s;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  margin: 15px 12px;
-  display: block;
-  line-height: 0;
-  text-align: center;
-}
-
-.team .team-member .social a:hover {
-  color: var(--default-color);
-}
-
-.team .team-member .social i {
-  font-size: 18px;
-}
-
-.team .team-member .member-info {
-  padding: 10px 15px 20px 15px;
-}
-
-.team .team-member .member-info h4 {
-  font-weight: 700;
-  margin-bottom: 5px;
-  font-size: 20px;
-}
-
-.team .team-member .member-info span {
-  display: block;
-  font-size: 14px;
-  font-weight: 400;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-}
-
-.team .team-member .member-info p {
-  font-style: italic;
-  font-size: 14px;
-  padding-top: 15px;
-  line-height: 26px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-}
-
-.team .team-member:hover {
-  transform: scale(1.08);
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
-}
-
-.team .team-member:hover .social {
-  right: 8px;
-  opacity: 1;
-} */
-
-/*--------------------------------------------------------------
-# Clients Section
---------------------------------------------------------------*/
-/* .clients .swiper-slide img {
-  transition: 0.3s;
-  opacity: 0.5;
-}
-
-.clients .swiper-slide img:hover {
-  opacity: 1;
-}
-
-.clients .swiper-wrapper {
-  height: auto;
-}
-
-.clients .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.clients .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  opacity: 1;
-  background-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.clients .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-} */
-
-/*--------------------------------------------------------------
 # Recent Posts Section
 --------------------------------------------------------------*/
 .recent-posts .post-item {
@@ -1899,7 +1875,7 @@ section,
 --------------------------------------------------------------*/
 .contact .info-item {
   background: color-mix(in srgb, var(--default-color), transparent 96%);
-  padding: 30px;
+  padding: 10px;
 }
 
 .contact .info-item i {
@@ -1962,6 +1938,12 @@ section,
 
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.contact h2{
+  text-align: center;
+  font-weight: bolder;
+
 }
 
 /*--------------------------------------------------------------
