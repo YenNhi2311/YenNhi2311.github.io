@@ -1341,12 +1341,13 @@ section,
   border-right: 1px solid #ddd;
 }
 
-  .services .table thead th {
-    background-color: #EE0033;
-    font-weight: bold;
-    color: white;
-    border-bottom: 2px solid #EE0033;
-  }
+.services .table thead th {
+  background-color: #EE0033;
+  font-weight: bold;
+  color: white;
+  border-bottom: 2px solid #EE0033;
+  text-align: center; /* Căn giữa tiêu đề */
+}
 
 .services .table tbody tr:nth-child(even) {
   background-color: #f2f2f2;
@@ -1355,33 +1356,47 @@ section,
 .services .table tbody th {
   width: 140px;
   font-weight: bold;
+  text-align: center; /* Căn giữa hàng đầu */
 }
 
-/* Responsive adjustments for smaller screens */
+/* Responsive adjustments for medium screens */
 @media (max-width: 768px) {
   .services .table th,
   .services .table td {
-    width: auto; /* Allow columns to shrink to fit the content */
-    padding: 10px 5px; /* Reduce padding for smaller screens */
-    font-size: 0.9em; /* Slightly smaller font size */
+    width: auto; /* Cho phép cột co giãn theo nội dung */
+    padding: 10px 5px; /* Giảm padding cho màn hình nhỏ */
+    font-size: 0.9em;
+    text-align: center; /* Căn giữa nội dung */
   }
   
   .services .table thead th {
-    font-size: 1em; /* Maintain slightly larger font size for headers */
+    font-size: 1em;
+    text-align: center; /* Đảm bảo chữ căn giữa */
+  }
+
+  .services .table {
+    width: 100%; /* Đặt bảng co giãn 100% trên màn hình nhỏ */
   }
 }
 
+/* Responsive adjustments for very small screens */
 @media (max-width: 480px) {
   .services .table th,
   .services .table td {
-    padding: 8px 4px; /* Further reduce padding on very small screens */
-    font-size: 0.8em; /* Smaller font size for readability */
+    padding: 8px 4px; /* Giảm thêm padding trên màn hình rất nhỏ */
+    font-size: 0.8em;
   }
 
   .services .table thead th {
     font-size: 0.9em;
+    text-align: center; /* Căn giữa chữ trên màn hình nhỏ */
+  }
+
+  .services .table {
+    width: 100%; /* Đảm bảo bảng có độ rộng 100% */
   }
 }
+
 
 
 /* Responsive Styles */
